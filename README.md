@@ -11,13 +11,16 @@ A simple command-line password manager written in C.
 - 🔒 Optional: Encrypt/decrypt passwords using a simple Caesar cipher
 - 🛠 Menu-driven interface
 
-## 📁 File Structure
+## 📁 Folder Structure
+```
 password_manager/
 │
-├── main.c # Source code
-├── makefile # Compile the program
-├── passwords.txt # Data file for saved credentials
-└── README.md # Project documentation
+├── main.c         # Source code
+├── makefile       # Compile the program
+├── passwords.txt  # Data file for saved credentials
+└── README.md      # Project documentation
+```
+
 
 ## 🔧 Getting Started
 
