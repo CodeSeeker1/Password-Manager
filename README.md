@@ -36,7 +36,7 @@ password_manager/
 5. Exit
 
 ## Example: Adding a New Account
-You’ll be asked to enter: Website name, Username or Email, Password
+You’ll be asked to enter:
 ```
 Website: github.com
 Username: john_doe
