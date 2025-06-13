@@ -489,12 +489,13 @@ int main() {
     //Check if master password has been set, if not prompt user to create one
     if(access(MASTER_PASS,F_OK) != 0){
         // Prompt for master password and hash it
+        printf("------------\nNo master password can be found, create a new one:\n");
         create_pmaster();
     }
     
     printf("=====================================\n");
     printf("  Welcome to VaultSecure!\nYour credentials are protected with strong cryptography and never stored in plain text.\nPlease enter your master password to unlock access.");
-    printf("\n**Security Tip** Never share your master password. If you forget it, recovery is not possible.");
+    printf("\n\n**Security Tip** Never share your master password. If you forget it, recovery is not possible.\n");
     //User already created a master password, verify the correct master password is provide
     if (verify_pmaster(key) != 0){
         fprintf(stderr,"[!] Authentication failed, Exiting.\n");
@@ -541,15 +542,20 @@ int main() {
                 search_account(uname,site,PLAINTEXT_FILE);
                 break;
             case 6:
+                //User exited the program without creating an account
+                if(access(PLAINTEXT_FILE,F_OK)!= 0){
+                   printf("\nExiting.\n");
+                   break;  
+                }
+
                 //With the encryption key, the file could now be encrypted
                 printf("[*] Exiting and encrypting data...\n");
                 if (encrypt_file(PLAINTEXT_FILE, ENC_FILE, key) != 0) {
                     fprintf(stderr, "[!] Encryption failed.\n");
                 } else {
                     remove(PLAINTEXT_FILE); // Clean up decrypted file
-                    printf("[+] Data encrypted and saved.\n");
+                    printf("[+] Data encrypted and saved.\nGood bye.");
                 }
-                printf("\nGood bye.\n");
                 break;
             default:
                 printf("[!] Invalid choice.\n");
