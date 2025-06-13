@@ -15,7 +15,8 @@ A secure CLI password manager written in C.
 ```
 password_manager/
 │
-├── main.c         # Source code
+├── pmanager.c         # Source code
+├── pmanager.h       # header file
 ├── makefile       # Compile the program
 └── README.md      # Project documentation
 ```
