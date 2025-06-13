@@ -76,5 +76,3 @@ The data will be saved in passwords.txt.
 
 ## 🌱 Stretch Goals
 - Add a master password to access the manager
-- Obscure password input using asterisks (*)
-- Accept command-line arguments for automation
