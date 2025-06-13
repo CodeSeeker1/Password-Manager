@@ -1,4 +1,4 @@
-# Password-Manager
+# Password Manager
 A secure CLI password manager written in C. 
 
 ## 🧰 Features
