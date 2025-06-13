@@ -8,7 +8,7 @@ A secure CLI password manager written in C.
 - 🔍 Search for an account by website name
 - ❌ Delete an account entry
 - 💾 Store data persistently in a file
-- 🔒 Using Libsodium to hash the passwords and encrypt the file
+- 🔒 Using Libsodium to password hashing and encryption/decryption of the password file
 - 🛠 Menu-driven interface
 
 ## 📁 Folder Structure
