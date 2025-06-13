@@ -1,5 +1,5 @@
 # Password-Manager
-A simple command-line password manager written in C. 
+A secure CLI password manager written in C. 
 
 ## 🧰 Features
 
@@ -8,7 +8,7 @@ A simple command-line password manager written in C.
 - 🔍 Search for an account by website name
 - ❌ Delete an account entry
 - 💾 Store data persistently in a file
-- 🔒 Optional: Encrypt/decrypt passwords using a simple Caesar cipher
+- 🔒 Using Libsodium to hash the passwords and encrypt the file
 - 🛠 Menu-driven interface
 
 ## 📁 Folder Structure
@@ -28,15 +28,45 @@ password_manager/
 - A C compiler (e.g., `gcc`)
 - Terminal or command prompt
 
+## 🔐 Cryptography with Libsodium
+
+This project uses [**libsodium**](https://libsodium.gitbook.io/doc/) for secure password hashing and encryption.  
+Libsodium is a modern cryptographic library based on NaCl.
+
+### Why Libsodium?
+- Easy-to-use and secure-by-default
+- Strong password hashing with `crypto_pwhash()`
+- Optional encryption with `crypto_secretbox_easy()`
+
+### How to Install
+
+#### On Ubuntu (including WSL):
+```bash
+sudo apt update
+sudo apt install libsodium-dev
+```
+#### On MacOS (With Homebrew):
+```bash
+brew install libsodium
+```
+## Notes
+- Initialize libsodium in ``main()``:
+  ```
+  if (sodium_init() < 0) {
+    // panic: libsodium couldn't initialize
+  }
+  ```
+
 ## ✏️ Usage
-1. Add New Account
-2. View All Accounts
-3. Search Account
-4. Delete Account
-5. Exit
+1. ➕ **Add New Account** – Enter a website, username, and password to store securely.
+2. 🗑️ **Delete an Account** – Remove an existing account entry from the file.
+3. ✏️ **Update Account Credentials** – Modify the username or password for a saved account.
+4. 📋 **View All Accounts** – Display all saved account entries.
+5. 🔍 **Search for an Account** – Find an account by website name.
+6. 🚪 **Quit Program** – Closes the application and encrypts the file.
 
 ## Example: Adding a New Account
-You’ll be asked to enter: Website name, Username or Email, Password
+You’ll be asked to enter:
 ```
 Website: github.com
 Username: john_doe
@@ -46,5 +76,3 @@ The data will be saved in passwords.txt.
 
 ## 🌱 Stretch Goals
 - Add a master password to access the manager
-- Obscure password input using asterisks (*)
-- Accept command-line arguments for automation
