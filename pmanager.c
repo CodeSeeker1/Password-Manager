@@ -3,7 +3,6 @@
  * @author Ayub Haji 
  * @version 0.1
  * @date 2025-05-21
- * @copyright Copyright (c) 2025
  * @brief Password Manager that allows users to add,delete,view and search accounts. 
  *        The information is stored securing through layers of security:
  *          - Hashing the password field of the account with a salt 
@@ -14,7 +13,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <termios.h>
 #include <unistd.h>
 #include "pmanager.h"
 
