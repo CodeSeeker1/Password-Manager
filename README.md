@@ -17,7 +17,6 @@ password_manager/
 │
 ├── main.c         # Source code
 ├── makefile       # Compile the program
-├── passwords.txt  # Data file for saved credentials
 └── README.md      # Project documentation
 ```
 
@@ -59,11 +58,13 @@ brew install libsodium
 
 ## ✏️ Usage
 1. ➕ **Add New Account** – Enter a website, username, and password to store securely.
-2. 🗑️ **Delete an Account** – Remove an existing account entry from the file.
+2. 🗑️ **Delete an Account** – Remove an existing account entry from the password file.
 3. ✏️ **Update Account Credentials** – Modify the username or password for a saved account.
 4. 📋 **View All Accounts** – Display all saved account entries.
 5. 🔍 **Search for an Account** – Find an account by website name.
-6. 🚪 **Quit Program** – Closes the application and encrypts the file.
+6. 🚪 **Quit Program** – Closes the application and encrypts the password file.
+
+*The program will decrypt the password file once the correct master password is provided* 
 
 ## Example: Adding a New Account
 You’ll be asked to enter:
@@ -75,4 +76,4 @@ Password: myS3cretP@ss
 The data will be saved in passwords.txt.
 
 ## 🌱 Stretch Goals
-- Add a master password to access the manager
+- Add a master password to access the manager --> Completed
